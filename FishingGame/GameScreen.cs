@@ -301,8 +301,8 @@ namespace FishingGame
                 }
             }
 
+            //Calculating the total score
             totalscore = fishscore - paddlehit;
-
             
             Refresh();
 

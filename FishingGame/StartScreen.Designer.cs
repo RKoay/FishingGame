@@ -50,12 +50,12 @@
             // b1
             // 
             this.b1.BackColor = System.Drawing.Color.LightSalmon;
-            this.b1.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.b1.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b1.Location = new System.Drawing.Point(369, 511);
             this.b1.Name = "b1";
             this.b1.Size = new System.Drawing.Size(716, 219);
             this.b1.TabIndex = 1;
-            this.b1.Text = "Click To Start";
+            this.b1.Text = "Click This To Start: Your goal is to achieve score #25";
             this.b1.UseVisualStyleBackColor = false;
             this.b1.Click += new System.EventHandler(this.b1_Click);
             // 
