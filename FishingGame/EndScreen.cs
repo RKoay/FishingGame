@@ -12,52 +12,37 @@ namespace FishingGame
 {
     public partial class EndScreen : UserControl
     {
-        Boolean spaceDown, escDown;
+        //Global values
+
         public EndScreen()
         {
             InitializeComponent();
-
-            if (spaceDown == true)
-            {
-                Form f = this.FindForm();
-                f.Controls.Remove(value: this);
-                StartScreen screen1 = new StartScreen();
-                f.Controls.Add(screen1);
-                screen1.Focus();
-
-                screen1.Location = new Point((f.Width - screen1.Width) / 2, (f.Height - screen1.Height) / 2);
-            }
-            
-        }
-
-        private void EndScreen_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
-        {
-            switch (e.KeyCode)
-            {
-                case Keys.Space:
-                    spaceDown = true;
-                    break;
-                case Keys.Escape:
-                    escDown = true;
-                    Application.Exit();
-                    break;
-            }
         }
         
 
-        private void EndScreen_KeyUp(object sender, KeyEventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            switch (e.KeyCode)
-            {
-                case Keys.Space:
-                    spaceDown = false;
-                    break;
-                case Keys.Escape:
-                    escDown = false;
-                    break;
-            }
+            Application.Exit();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form1.increments = 4;
+            Form1.rodHSpeed = 8;
+            Form1.rodVSpeed = 6;
+            Form1.rodColor = Color.DarkRed;
 
+            Form f = this.FindForm();
+            f.Controls.Remove(value: this);
+            StartScreen screen1 = new StartScreen();
+            f.Controls.Add(screen1);
+            screen1.Focus();
+
+            screen1.Location = new Point((f.Width - screen1.Width) / 2, (f.Height - screen1.Height) / 2);
+        }
     }
+    
+    
 }
+
+

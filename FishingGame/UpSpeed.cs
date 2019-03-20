@@ -21,6 +21,7 @@ namespace FishingGame
         {
             Form1.rodHSpeed = Form1.rodHSpeed + Form1.increments;
             Form1.rodVSpeed = Form1.rodVSpeed + Form1.increments;
+            
 
             Form f = this.FindForm();
             f.Controls.Remove(value: this);

@@ -40,7 +40,7 @@ namespace FishingGame
 
 
         // related to keys down and keys up 
-        Boolean leftArrowDown, rightArrowDown, upArrowDown, downArrowDown;
+        Boolean leftArrowDown, rightArrowDown, upArrowDown, downArrowDown, escDown;
 
         //Boolean collision;
         
@@ -94,6 +94,7 @@ namespace FishingGame
         private void GameScreen_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
             //player button presses
+            //Adding an end key 
             switch (e.KeyCode)
             {
                 case Keys.Left:
@@ -108,7 +109,13 @@ namespace FishingGame
                 case Keys.Down:
                     downArrowDown = true;
                     break;
+                //setting up an escape route...working
+                case Keys.Escape:
+                    escDown = true;
+                    Application.Exit();
+                    break;
             }
+
 
             
         }
@@ -129,6 +136,10 @@ namespace FishingGame
                     break;
                 case Keys.Down:
                     downArrowDown = false;
+                    break;
+                //setting up an escape route 
+                case Keys.Escape:
+                    escDown = false;
                     break;
             }
 
@@ -296,7 +307,7 @@ namespace FishingGame
             Refresh();
 
             //if total score reaches...then bring the user to gift screen
-            if (totalscore == 25)
+            if (totalscore > 20)
             {
                 giftScreen.Visible = true;
             }

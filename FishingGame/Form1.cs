@@ -22,6 +22,15 @@ namespace FishingGame
         {
             InitializeComponent();
             //Direct to a Start Screen
+            //Start Screen = Screen 1
+            //Game Screen  = Screen 2
+            //Gift Screen = Screen 3
+            //Up Speed = Screen 4
+            //Appearance Change = Screen 5
+            //End Screen = Screen 6
+
+            //Final ToDos: Add sounds
+
             StartScreen screen1 = new StartScreen();
             this.Controls.Add(screen1);
 
