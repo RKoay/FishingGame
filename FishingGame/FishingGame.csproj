@@ -49,6 +49,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppearanceChange.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AppearanceChange.Designer.cs">
+      <DependentUpon>AppearanceChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EndScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EndScreen.Designer.cs">
+      <DependentUpon>EndScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GiftScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GiftScreen.Designer.cs">
+      <DependentUpon>GiftScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +88,21 @@
       <DependentUpon>StartScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Object.cs" />
+    <Compile Include="UpSpeed.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UpSpeed.Designer.cs">
+      <DependentUpon>UpSpeed.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AppearanceChange.resx">
+      <DependentUpon>AppearanceChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EndScreen.resx">
+      <DependentUpon>EndScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GiftScreen.resx">
+      <DependentUpon>GiftScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -87,6 +120,9 @@
     </Compile>
     <EmbeddedResource Include="StartScreen.resx">
       <DependentUpon>StartScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpSpeed.resx">
+      <DependentUpon>UpSpeed.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="Properties\Settings.settings">

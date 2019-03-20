@@ -12,11 +12,16 @@ namespace FishingGame
 {
     public partial class Form1 : Form
     {
+        public static int increments = 4;
+        public static int rodHSpeed = 8;
+        public static int rodVSpeed = 6;
+
+        public static Color rodColor = Color.DarkRed;
 
         public Form1()
         {
             InitializeComponent();
-            //Create a Start Screen
+            //Direct to a Start Screen
             StartScreen screen1 = new StartScreen();
             this.Controls.Add(screen1);
 

@@ -26,6 +26,7 @@ namespace FishingGame
             color = _color;
         }
 
+        //Creating fish object 
         public Object(int _x, int _y, int _width, int _height, int _speed, Color _color)
         {
             x = _x;
@@ -83,19 +84,57 @@ namespace FishingGame
             }
         }
 
+        public bool HitTracker(Object o)
+        {
+            // the rod
+            Rectangle ob = new Rectangle(o.x, o.y, o.width, o.height);
+
+            // the paddles
+            Rectangle rod = new Rectangle(x, y, width, height);
+
+            if (ob.IntersectsWith(rod))
+            {
+                return true;
+            }
+
+            return false;
+        }
+        //public bool Collision(Character c)
+
+        //{
+        //    Rectangle thisRec = new Rectangle(x, y, width, height);
+        //    Rectangle cRec = new Rectangle(c.x, c.y, c.width, c.height);
+
+        //    if (thisRec.IntersectsWith(cRec))
+        //    {
+        //        return true;
+        //    }
+        //    return false;
+        //}
+
         //Object rod collision with the walls method
-        //Remember to add gamescree to the variable column 
+        //Remember to add gamescreen to the variable column 
         public void Collision(Object r)
         {
             Rectangle rod = new Rectangle(r.x, r.y, r.width, r.height);
 
-            if (r.x < 0)
+            //collision with left wall
+            if (r.x < 200)
             {
-                r.x = 0;
+                r.x = 200;
             }
+            //Collision with right wall
             if (r.x > 1440 - r.width)
             {
                 r.x = 1440 - r.width;
+            }
+            if (r.y > 0)
+            {
+                r.y = 0;
+            }
+            if (r.y + r.height < 0)
+            {
+                r.y = -662;
             }
         }
 
@@ -106,6 +145,7 @@ namespace FishingGame
             x += speed;
             y += speed;
         }
+
 
         //Fish Collision with walls 
 
@@ -120,10 +160,30 @@ namespace FishingGame
                 speed *= -1;
             }
         }
+        
 
-        //Collision with fish 
+        //Rod collision with fish 
+        //Fish will be on rod
+        public void RodFishCollision(Object r, Object f/*, int fishscore, int constant*/)
+        {
+            Rectangle rod = new Rectangle(r.x, r.y, r.width, r.height);
+            Rectangle fishes = new Rectangle(f.x, f.y, f.width, f.height);
 
-
+            //the command below somehow move the fish forward from their original position
+            //if (rod.IntersectsWith(fishes))
+            //{
+            //    f.y = r.y + r.height;
+            //}
+            
+            if (rod.IntersectsWith(fishes))
+            {
+                //fishscore += constant;
+                Random randGen = new Random();
+                f.x = randGen.Next(20, 101);
+                f.y = randGen.Next(20, 101);
+            }
+        }
+        
         
 
     }

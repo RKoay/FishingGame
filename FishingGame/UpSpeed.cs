@@ -10,22 +10,23 @@ using System.Windows.Forms;
 
 namespace FishingGame
 {
-    public partial class StartScreen : UserControl
+    public partial class UpSpeed : UserControl
     {
-        public StartScreen()
+        public UpSpeed()
         {
             InitializeComponent();
-            //Application.Exit();
         }
 
-        private void b1_Click(object sender, EventArgs e)
+        private void clicker_Click(object sender, EventArgs e)
         {
-            //Going to Game Screen
+            Form1.rodHSpeed = Form1.rodHSpeed + Form1.increments;
+            Form1.rodVSpeed = Form1.rodVSpeed + Form1.increments;
+
             Form f = this.FindForm();
             f.Controls.Remove(value: this);
             GameScreen screen2 = new GameScreen();
             f.Controls.Add(screen2);
-            screen2.Focus(); 
+            screen2.Focus();
 
             screen2.Location = new Point((f.Width - screen2.Width) / 2, (f.Height - screen2.Height) / 2);
         }
