@@ -307,7 +307,7 @@ namespace FishingGame
             Refresh();
 
             //if total score reaches...then bring the user to gift screen
-            if (totalscore > 20)
+            if (totalscore > 25)
             {
                 giftScreen.Visible = true;
             }
