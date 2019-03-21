@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Media;
 
 namespace FishingGame
 {
@@ -55,8 +56,9 @@ namespace FishingGame
 
         //Trying out to create a new list
         List<int> PaddleRodTracker = new List<int>();
+        SoundPlayer fishsound = new SoundPlayer(Properties.Resources.fishbubbles);
 
-        
+
 
         SolidBrush brush;
 
@@ -86,6 +88,7 @@ namespace FishingGame
 
             //declaring the method to make fish
             MakeFish();
+            fishsound.PlayLooping();
 
         }
 
@@ -112,7 +115,6 @@ namespace FishingGame
                 //setting up an escape route...working
                 case Keys.Escape:
                     escDown = true;
-                    Application.Exit();
                     break;
             }
 
@@ -151,6 +153,8 @@ namespace FishingGame
         //Method to make fish 
        public void MakeFish()
         {
+            
+
             newFishCounter = 0;
 
             //About fish location and size
@@ -180,6 +184,7 @@ namespace FishingGame
             screen3.Focus();
 
             screen3.Location = new Point((f.Width - screen3.Width) / 2, (f.Height - screen3.Height) / 2);
+            this.Dispose();
         }
 
         private void endScreen_Click(object sender, EventArgs e)
@@ -190,7 +195,9 @@ namespace FishingGame
             f.Controls.Add(screen6);
             screen6.Focus();
 
+
             screen6.Location = new Point((f.Width - screen6.Width) / 2, (f.Height - screen6.Height) / 2);
+            this.Dispose();
         }
 
         private void GameLoop_Tick(object sender, EventArgs e)
@@ -199,14 +206,6 @@ namespace FishingGame
             //checking rod collision with paddles
             rod.Collision(rod, paddle1, paddle2);
             
-            
-
-            //if (collision == true)
-            //{
-            //    paddlehit++;
-            //}
-
-            //rod collision with walls
 
             rod.Collision(rod);
 
@@ -223,7 +222,7 @@ namespace FishingGame
             {
                 //when collision with rod, (check for collision and act upon commands)
                 //add one to fishscore each time there is a collision with between the fish and the rod
-                f.RodFishCollision(rod, f/*, fishscore, 1*/);
+                f.RodFishCollision(rod, f);
                 
                
                 //under "normal" conditions, no collision with rod
@@ -282,6 +281,12 @@ namespace FishingGame
                 rod.Move(Form1.rodVSpeed, "down");
             }
 
+            //Moving to end screen
+            if (escDown)
+            {
+                endScreen.Visible = true;
+            }
+
             //Keeping track of paddlehit
             foreach (Object p in Paddles)
             {
@@ -310,12 +315,14 @@ namespace FishingGame
             if (totalscore > 25)
             {
                 giftScreen.Visible = true;
+                
             }
             
             //if total score reaches below 0, then brings the user to end screen
             if (totalscore < 0)
             {
                 endScreen.Visible = true;
+               
             }
 
         }

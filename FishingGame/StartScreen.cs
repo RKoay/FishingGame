@@ -7,19 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace FishingGame
 {
     public partial class StartScreen : UserControl
     {
+        SoundPlayer startsound = new SoundPlayer(Properties.Resources.start);
+        SoundPlayer click = new SoundPlayer(Properties.Resources.click);
         public StartScreen()
         {
             InitializeComponent();
             //Application.Exit();
+            startsound.Play();
         }
 
         private void b1_Click(object sender, EventArgs e)
         {
+            click.Play();
             //Going to Game Screen
             Form f = this.FindForm();
             f.Controls.Remove(value: this);

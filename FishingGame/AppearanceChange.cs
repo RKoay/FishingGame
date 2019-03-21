@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace FishingGame
 {
     public partial class AppearanceChange : UserControl
     {
+        SoundPlayer click = new SoundPlayer(Properties.Resources.click); 
         public AppearanceChange()
         {
             InitializeComponent();
@@ -19,6 +21,7 @@ namespace FishingGame
 
         private void clickerOne_Click(object sender, EventArgs e)
         {
+            click.Play();
             Form1.rodColor = Color.Pink;
 
             Form f = this.FindForm();
@@ -32,6 +35,7 @@ namespace FishingGame
 
         private void ClickerTwo_Click(object sender, EventArgs e)
         {
+            click.Play();
             Form1.rodColor = Color.Blue;
 
             Form f = this.FindForm();

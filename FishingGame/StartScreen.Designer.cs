@@ -34,6 +34,7 @@
             this.decolabel2 = new System.Windows.Forms.Label();
             this.decolabel3 = new System.Windows.Forms.Label();
             this.decolabel4 = new System.Windows.Forms.Label();
+            this.intro = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // title
@@ -91,11 +92,22 @@
             this.decolabel4.Size = new System.Drawing.Size(1437, 100);
             this.decolabel4.TabIndex = 5;
             // 
+            // intro
+            // 
+            this.intro.Font = new System.Drawing.Font("Palatino Linotype", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.intro.Location = new System.Drawing.Point(369, 766);
+            this.intro.Name = "intro";
+            this.intro.Size = new System.Drawing.Size(716, 96);
+            this.intro.TabIndex = 6;
+            this.intro.Text = "At any point if the user want to exit the game, simply press the Escape button on" +
+    " keyboard";
+            // 
             // StartScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.NavajoWhite;
+            this.Controls.Add(this.intro);
             this.Controls.Add(this.decolabel4);
             this.Controls.Add(this.decolabel3);
             this.Controls.Add(this.decolabel2);
@@ -117,5 +129,6 @@
         private System.Windows.Forms.Label decolabel2;
         private System.Windows.Forms.Label decolabel3;
         private System.Windows.Forms.Label decolabel4;
+        private System.Windows.Forms.Label intro;
     }
 }

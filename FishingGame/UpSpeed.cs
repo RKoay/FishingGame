@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace FishingGame
 {
     public partial class UpSpeed : UserControl
     {
+        SoundPlayer click = new SoundPlayer(Properties.Resources.click); 
         public UpSpeed()
         {
             InitializeComponent();
@@ -19,6 +21,8 @@ namespace FishingGame
 
         private void clicker_Click(object sender, EventArgs e)
         {
+            click.Play();
+
             Form1.rodHSpeed = Form1.rodHSpeed + Form1.increments;
             Form1.rodVSpeed = Form1.rodVSpeed + Form1.increments;
             

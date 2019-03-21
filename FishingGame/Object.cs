@@ -164,16 +164,11 @@ namespace FishingGame
 
         //Rod collision with fish 
         //Fish will be on rod
-        public void RodFishCollision(Object r, Object f/*, int fishscore, int constant*/)
+        public void RodFishCollision(Object r, Object f)
         {
             Rectangle rod = new Rectangle(r.x, r.y, r.width, r.height);
             Rectangle fishes = new Rectangle(f.x, f.y, f.width, f.height);
-
-            //the command below somehow move the fish forward from their original position
-            //if (rod.IntersectsWith(fishes))
-            //{
-            //    f.y = r.y + r.height;
-            //}
+            
             
             if (rod.IntersectsWith(fishes))
             {
