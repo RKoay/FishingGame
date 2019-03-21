@@ -95,12 +95,12 @@
             // intro
             // 
             this.intro.Font = new System.Drawing.Font("Palatino Linotype", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.intro.Location = new System.Drawing.Point(369, 766);
+            this.intro.Location = new System.Drawing.Point(345, 766);
             this.intro.Name = "intro";
-            this.intro.Size = new System.Drawing.Size(716, 96);
+            this.intro.Size = new System.Drawing.Size(761, 96);
             this.intro.TabIndex = 6;
-            this.intro.Text = "At any point if the user want to exit the game, simply press the Escape button on" +
-    " keyboard";
+            this.intro.Text = "At any point in the game if you want to exit the game, simply press the Escape bu" +
+    "tton on keyboard";
             // 
             // StartScreen
             // 
